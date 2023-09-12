@@ -34,6 +34,11 @@ function addBook() {
 
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
+
+    document.getElementById('inputBookTitle').value="";
+    document.getElementById('inputBookAuthor').value="";
+    document.getElementById('inputBookYear').value="";
+    document.getElementById('inputBookIsComplete').checked=false;
 };
 
 function generateBookObject(id, title, author, year, isComplete) {
@@ -223,4 +228,8 @@ document.getElementById("searchBook").addEventListener("submit", function (event
             book.parentElement.style.display = "none";
         }
     }
+});
+
+document.getElementById("clearSearch").addEventListener("click", function () {
+    document.getElementById("searchBookTitle").value = "";
 });
